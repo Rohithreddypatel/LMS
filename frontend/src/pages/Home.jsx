@@ -31,7 +31,7 @@ export default function Home() {
       const { data } = await api.get("/courses", { params });
       setCourses(data.data);
     } catch {
-      setError("Cannot connect to the server. Make sure the backend is running on port 5000.");
+      setError("Cannot connect to the server. Please try again in a moment.");
     } finally { setLoading(false); }
   }, [search, cat, level]);
 
