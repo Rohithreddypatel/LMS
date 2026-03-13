@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://lms-backend-zxng.onrender.com/api",
-  timeout: 10000,
+  timeout: 15000,
 });
 
 api.interceptors.request.use((cfg) => {
