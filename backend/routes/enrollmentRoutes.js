@@ -1,0 +1,10 @@
+const r = require("express").Router();
+const c = require("../controllers/enrollmentController");
+const { protect, adminOnly } = require("../middleware/auth");
+r.use(protect);
+r.post("/",                        c.enroll);
+r.get("/my",                       c.getMy);
+r.get("/check/:courseId",          c.check);
+r.put("/:courseId/progress",       c.updateProgress);
+r.get("/admin/all", adminOnly,     c.adminGetAll);
+module.exports = r;
